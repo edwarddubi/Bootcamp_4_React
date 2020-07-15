@@ -3,7 +3,7 @@ import {getFilteredClubs} from "../Functions/AppFunctions"
 
 const Search = (props) => {
 
-  const filterText = (event) =>{
+  const getFilterText = (event) =>{
   //You will need the onChange value for the input tag to capture the search bar value
     props.setFilteredClubs(getFilteredClubs(event.target.value, props.data))
   }
@@ -14,7 +14,7 @@ const Search = (props) => {
       <div  style={{ marginTop: "1rem" }} class="ui search fluid">
         <div class="ui icon input">
           <input
-            onChange={filterText}
+            onChange={getFilterText}
             class="prompt"
             type="text"
             placeholder="Type to filter..."

@@ -57,4 +57,5 @@ const deleteFootballClub = (id, data) => {
 
 }
 
+
 export { getFilteredClubs, deleteFootballClub };
