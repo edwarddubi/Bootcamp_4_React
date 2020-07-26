@@ -10,9 +10,14 @@ import { getData } from "./data/data.js";
 function App() {
   const [data, setData] = useState(getData());
   const [filteredClubs, setFilteredClubs] = useState([]);
-  const [footballClubId, setFootballClubId] = useState(0); //this can help you edit or delete a specific football club
-  const [delFootballClub, setDelFootballClub] = useState(false);
-  const [editFootballClub, setEditFootballClub] = useState(false);
+  const [delFootballClub, setDelFootballClub] = useState({
+    visible: false,
+    id: null,
+  });
+  const [editFootballClub, setEditFootballClub] = useState({
+    visible: false,
+    id: null,
+  });
 
   return (
     <div className="App">
@@ -27,8 +32,9 @@ function App() {
           <Search data={data} setFilteredClubs={setFilteredClubs} />
 
           <main style={{ marginTop: "50px" }} className="main">
-            <div class="ui grid">
-              <div
+            <div class="ui two column grid">
+            <div class="row">
+            <div
                 style={{ width: "55%" }}
                 class="table-responsive"
                 className="tableWrapper"
@@ -44,7 +50,6 @@ function App() {
                     </tr>
                   </thead>
                   <FootballClubLists
-                    setFootballClubId={setFootballClubId}
                     data={data}
                     filteredClubs={filteredClubs}
                     setDelFootballClub={setDelFootballClub}
@@ -55,7 +60,7 @@ function App() {
                       <th>
                         {filteredClubs !== null && filteredClubs.length !== 0
                           ? "Search results: " + filteredClubs.length
-                          : data.length}{" "}
+                          : data.length}
                         School(s)
                       </th>
                       <th></th>
@@ -69,13 +74,12 @@ function App() {
                 class="six wide column"
               >
                 <div>
-                  {delFootballClub && (
+                  {delFootballClub['visible'] && (
                     <RemoveFootballClub
                       data={data}
                       setData={setData}
-                      footballClubId={footballClubId}
                       setDelFootballClub={setDelFootballClub}
-                      setFootballClubId={setFootballClubId}
+                      delFootballClub={delFootballClub}
                       setFilteredClubs={setFilteredClubs}
                       filteredClubs={filteredClubs}
                     />
@@ -88,12 +92,16 @@ function App() {
                 </div>
               </div>
 
-              <div>
+            </div>
+              <div class="row">
+              <div class="column">
                 <AddFootballClub data={data} />
               </div>
-              <div>
+              <div class="column">
                 <EditFootballClub data={data} />
               </div>
+              </div>
+              
             </div>
           </main>
         </div>

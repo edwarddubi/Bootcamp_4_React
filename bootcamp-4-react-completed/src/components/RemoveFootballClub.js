@@ -10,6 +10,12 @@ const RemoveFootballClub = (props) => {
         ) ||
         props.setData(deleteFootballClub(props.footballClubId, props.data));
 
+    if (props.viewFootballClub["id"] === props.delFootballClub["id"]) {
+      props.setViewFootballClub({
+        visible: false,
+        id: null,
+      });
+    }
     props.setDelFootballClub({
       visible: false,
       id: null,
@@ -23,7 +29,7 @@ const RemoveFootballClub = (props) => {
   };
 
   return (
-    <div style={{ marginTop: "10px" }} class="ui floating  message">
+    <div style={{ marginTop: "25px" }} class="ui floating  message">
       <div class="header">Delete Football Club</div>
       <p>Are you sure you want to delete this football Club?</p>
       <button onClick={remove} class="ui button red ">

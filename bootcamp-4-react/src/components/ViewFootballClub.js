@@ -8,7 +8,7 @@ import React, {useState, useEffect} from 'react';
  * user to view an existing football club
  * import your ViewFootball function and pass necessary arguments and return 
  * a football club to be displayed on the frontend
- * Be creative in your designing so users will not have a hard time interacting with your app
+ * Be creative with your ui design so users will not have a hard time interacting with your app
  */
 
 const ViewFootballClub = (props) => {
