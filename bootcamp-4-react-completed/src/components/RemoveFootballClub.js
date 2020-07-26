@@ -3,14 +3,15 @@ import { deleteFootballClub } from "../Functions/AppFunctions";
 
 const RemoveFootballClub = (props) => {
   const remove = () => {
+    const id = props.delFootballClub["id"]
     props.filteredClubs.length === 0
-      ? props.setData(deleteFootballClub(props.footballClubId, props.data))
+      ? props.setData(deleteFootballClub(id, props.data))
       : props.setFilteredClubs(
-          deleteFootballClub(props.footballClubId, props.filteredClubs)
+          deleteFootballClub(id, props.filteredClubs)
         ) ||
-        props.setData(deleteFootballClub(props.footballClubId, props.data));
+        props.setData(deleteFootballClub(id, props.data));
 
-    if (props.viewFootballClub["id"] === props.delFootballClub["id"]) {
+    if (props.viewFootballClub["id"] === id) {
       props.setViewFootballClub({
         visible: false,
         id: null,

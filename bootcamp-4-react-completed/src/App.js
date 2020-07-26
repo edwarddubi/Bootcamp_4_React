@@ -66,7 +66,7 @@ function App() {
                         <th>
                           {filteredClubs !== null && filteredClubs.length !== 0
                             ? "Search results: " + filteredClubs.length
-                            : data.length}
+                            : data.length}{" "}
                           School(s)
                         </th>
                         <th></th>
@@ -97,7 +97,7 @@ function App() {
                       />
                     )}
                   </div>
-                  {!delFootballClub['visible'] && <div style={{marginTop: "25px", height: "134px" }}></div>}
+                  {!delFootballClub['visible'] && <div style={{marginTop: "25px", height: "116px" }}></div>}
 
                   <div style={{ marginTop: "10px" }}>
                     <ViewFootballClub
