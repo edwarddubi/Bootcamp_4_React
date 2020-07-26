@@ -24,6 +24,8 @@ function App() {
   });
   const [addFootballClub, setAddFootballClub] = useState(false);
 
+  //console.log(data)
+
   return (
     <div className="App">
       <div className="bg">

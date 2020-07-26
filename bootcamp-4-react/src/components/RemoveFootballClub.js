@@ -3,12 +3,13 @@ import { deleteFootballClub } from "../Functions/AppFunctions";
 
 const RemoveFootballClub = (props) => {
   const remove = () => {
+    const id = props.delFootballClub['id']
     props.filteredClubs.length === 0
-      ? props.setData(deleteFootballClub(props.footballClubId, props.data))
+      ? props.setData(deleteFootballClub(id, props.data))
       : props.setFilteredClubs(
-          deleteFootballClub(props.footballClubId, props.filteredClubs)
+          deleteFootballClub(id, props.filteredClubs)
         ) ||
-        props.setData(deleteFootballClub(props.footballClubId, props.data));
+        props.setData(deleteFootballClub(id, props.data));
 
     props.setDelFootballClub({
       visible: false,
@@ -23,7 +24,7 @@ const RemoveFootballClub = (props) => {
   };
 
   return (
-    <div style={{ marginTop: "10px" }} class="ui floating  message">
+    <div style={{ marginTop: "25px" }} class="ui floating  message">
       <div class="header">Delete Football Club</div>
       <p>Are you sure you want to delete this football Club?</p>
       <button onClick={remove} class="ui button red ">

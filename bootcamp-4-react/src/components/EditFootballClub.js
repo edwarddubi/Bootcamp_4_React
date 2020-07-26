@@ -7,7 +7,7 @@ import React, { useState, useEffect } from "react";
  * user to edit and update an existing football club
  * import your EditFootball function and pass necessary arguments and return 
  * a new data to be displayed on the frontend
- * Be creative in your designing so users will not have a hard time interacting with your app
+ * Be creative with your ui design so users will not have a hard time interacting with your app
  */
 const AddFootballClub = (props) => {
   return <div></div>;
