@@ -367,8 +367,7 @@ As you develop the solution to this assignment you will need to complete at leas
 6. Run the automated tests on the cloned version of your project to make sure everything works so that you can get full credit.
 
 ## Grading (50 points)
-
-Implement the following functions
+### Implement the following functions
     - (10 points) AddFootballClub
     - (10 points) EditFootballClub
     - (10 points) FootballClubLists
