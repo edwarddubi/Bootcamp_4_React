@@ -1,5 +1,6 @@
 import React from "react";
 import { getFootballClub } from "../Functions/AppFunctions";
+const ColorHelper = require('color-to-name');
 
 /**
  *
@@ -17,6 +18,14 @@ const ViewFootballClub = (props) => {
     return getFootballClub(props.viewFootballClub["id"], props.data)[0];
   };
 
+  const hex_to_color_name = (hex) =>{
+    if(ColorHelper.isValidHexCode(hex)){
+      const color = ColorHelper.findClosestColor(hex);
+      return color.name
+    }
+    return null;
+  }
+
   return (
     <div>
       <div style={{ alignItems: "center", justifyContent: "center" }}>
@@ -31,9 +40,13 @@ const ViewFootballClub = (props) => {
               <div class="description">
                 <p>School: {getFootballClubData().school}</p>
                 <p>Mascot: {getFootballClubData().mascot}</p>
-                <p style={{ color: getFootballClubData().color }}>
-                  Color: {getFootballClubData().color}
+                <div style={{display:"flex"}}>
+                <p style={{marginRight:"3px"}}>
+                  Color: {hex_to_color_name(getFootballClubData().color)} /
                 </p>
+                <div style={{ backgroundColor: getFootballClubData().color, width: "140px" }}>{getFootballClubData().color}</div>
+                </div>
+                
                 <p>Conference: {getFootballClubData().conference}</p>
                 {getFootballClubData().search && (
                   <p>Search tags: {getFootballClubData().search.toString().replace(/,/gi, ', ')}</p>
