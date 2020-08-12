@@ -328,7 +328,7 @@ As you develop the solution to this assignment you will need to complete at leas
     - Import them in their respective components and use them.
     - The search and delete football components will help you understand what I mean if you have trouble understanding.
 
-- BuildingList.js: *In this file you will*
+- FootballClubLists.js: *In this file you will*
     - You only need to implement the `editFootballClub` and `viewFootballClubData` as well as any necessary onclick listeners
 
 - ViewFootballClub.js:
@@ -337,7 +337,7 @@ As you develop the solution to this assignment you will need to complete at leas
     - You can always refer to how `RemoveFootballClub` was implemented to aid you in the process of completing this part
     - Your view component should look like the following image (You get an extra credit for displaying the name of the color by mapping the hex color code to its respective color name) or you can just use an element (div) to display the color (No extra credit). You only need to choose one (either display the color name, extra credit or just show the color, no extra credit)
     - Note: the image uses / to separate those two so you need to choose one
-    ![image](example.png)
+    ![image](example.PNG)
 
 - Complete these components too. They allow a user to add and edit elements in the list.
     - AddFootballClub.js - Add a football club to the football club lists
